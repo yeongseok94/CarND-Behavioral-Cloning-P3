@@ -1,3 +1,4 @@
 data/
 run/
-beta_simulator*
+beta_simulator.x86_64
+beta_simulator_Data/
