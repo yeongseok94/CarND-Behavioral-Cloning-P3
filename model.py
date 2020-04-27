@@ -32,7 +32,7 @@ train_samples, validation_samples = train_test_split(samples, test_size=0.2)
 
 #%% Hyperparameters
 
-batch_size = 32
+batch_size = 32  # actual number of images in one batch is 6 times more than this
 num_epochs  = 5
 steering_correction = [0, 0.25, -0.25]  # for center/left/right image
 
