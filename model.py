@@ -53,11 +53,14 @@ def generator(samples, batch_size):
                     groupname = batch_sample[i].split('/')[-3]
                     path = datapath+'/'+groupname+'/IMG/'+imagename
                     image = mpimg.imread(path)
+                    
                     angle = float(batch_sample[3]) + steering_correction[i]
                     images.append(image)
                     angles.append(angle)
+                    
+                    images.append(cv2.flip(image, 1))
+                    angles.append(-angle)
 
-            # trim image to only see section with road
             X_train = np.array(images)
             y_train = np.array(angles)
             yield shuffle(X_train, y_train)
